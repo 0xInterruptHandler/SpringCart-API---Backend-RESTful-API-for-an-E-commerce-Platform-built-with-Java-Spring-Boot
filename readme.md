@@ -1,6 +1,5 @@
 # Esquema Base de datos
  
-
 ## Tabla: `Usuario`
 
 | Columna                   | Tipo         | Restricciones    |
@@ -40,7 +39,7 @@
 | ClienteApellido           | varchar(20)  | NOT NULL                                      |
 | ClienteNumeroTelefonico   | varchar(255) | NOT NULL                                      |
 | ClienteFechaActualizacion | timestamp    | NOT NULL                                      |
-| ClienteDireccionCodigo    | bigint       | FK → `address.address_id`                     |
+| ClienteDireccionCodigo    | bigint       | FK → `Direccion.DireccionCodigo`              |
 | ClienteUsuarioCodigo      | bigint       | NOT NULL, UNIQUE, FK → Usuario.UsuarioCodigo` |
 
 ---
@@ -60,7 +59,7 @@
 
 ---
 
-## Tabla: `product`
+## Tabla: `Producto`
 
 | Columna                    | Tipo             | Restricciones                              |
 | -------------------------- | ---------------- | ------------------------------------------ |
@@ -122,28 +121,15 @@
 
 ## Tabla: `Orden_Articulo`
 
-| Columna                         | Tipo      | Restricciones                        |
-| ------------------------------- | --------- | ------------------------------------ |
-| OrdenArticuloCodigo             | bigint    | PK                                   |
-| OrdenArticuloFechaCreacion      | timestamp | NOT NULL                             |
-| OrdenArticuloCantidad           | bigint    | NOT NULL, CHECK ≥ 0                  |
-| OrdenArticuloFechaActualizacion | timestamp |                                      |
-| OrdenArticuloOrdenCodigo        | bigint    | NOT NULL, FK → `"order".OrdenCodigo` |
-| OrdenArticuloProductoCodigo     | bigint    | NOT NULL, FK → `product.product_id`  |
+| Columna                         | Tipo      | Restricciones                            |
+| ------------------------------- | --------- | ---------------------------------------- |
+| OrdenArticuloCodigo             | bigint    | PK                                       |
+| OrdenArticuloFechaCreacion      | timestamp | NOT NULL                                 |
+| OrdenArticuloCantidad           | bigint    | NOT NULL, CHECK ≥ 0                      |
+| OrdenArticuloFechaActualizacion | timestamp |                                          |
+| OrdenArticuloOrdenCodigo        | bigint    | NOT NULL, FK → `Orden.OrdenCodigo`       |
+| OrdenArticuloProductoCodigo     | bigint    | NOT NULL, FK → `Producto.ProductoCodigo` |
 
 ---
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  
